@@ -66,7 +66,7 @@ const navLinks = [
 
       <div class="hidden md:flex items-center gap-4">
         <LanguageSwitcher locale={locale} currentPath={Astro.url.pathname} />
-        <a href="tel:+390541784754" class="btn-outline text-xs py-2 px-4 nav-btn-dark">
+        <a href="tel:+390541784754" class="btn-primary text-xs py-2 px-4">
           {t.nav.call}
         </a>
         <a href={navHref('contact')} class="btn-primary text-xs py-2 px-4">
@@ -133,7 +133,6 @@ const navLinks = [
     const closeMenu = document.getElementById('close-menu');
     const overlay = document.getElementById('mobile-overlay');
     const navLinks = document.querySelectorAll<HTMLElement>('#navbar .nav-link');
-    const navBtnDark = document.querySelector<HTMLElement>('#navbar .nav-btn-dark');
     const hamburgerLines = document.querySelectorAll<HTMLElement>('.hamburger-line');
 
     function updateScrollState() {
@@ -148,10 +147,6 @@ const navLinks = [
         navLinks.forEach((el) => {
           el.style.color = '';
         });
-        if (navBtnDark) {
-          navBtnDark.style.color = '';
-          navBtnDark.style.borderColor = '';
-        }
         hamburgerLines.forEach((el) => {
           el.style.backgroundColor = '';
         });
@@ -164,10 +159,6 @@ const navLinks = [
         navLinks.forEach((el) => {
           el.style.color = 'white';
         });
-        if (navBtnDark) {
-          navBtnDark.style.color = 'white';
-          navBtnDark.style.borderColor = 'white';
-        }
         hamburgerLines.forEach((el) => {
           el.style.backgroundColor = 'white';
         });
