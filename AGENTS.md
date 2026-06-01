@@ -30,7 +30,15 @@ There is no linter, typecheck, or test command configured. Validate changes by r
 - External links (brands, Brompton bike-builder, Bicicapace) open in new tabs with `rel="noopener noreferrer"`.
 - Images below the fold use `loading="lazy"`.
 - YouTube videos use a facade pattern (thumbnail + play button, iframe loaded on click).
+- Instagram gallery uses the Elfsight widget (ID `a4cf00c9-5a0c-4293-8b02-208ba5325633`), loaded via `<script src="https://apps.elfsight.com/p/platform.js" defer>` in `Gallery.astro`.
 - Contact form posts to Formspree (currently a PLACEHOLDER endpoint).
+
+## Deployment
+
+- **Vercel** auto-deploys on every push to `main` (no CI config needed).
+- The Vercel project is linked to the GitHub repo `pentagonalcycles/imeccanicirimini`.
+- Build command: `astro build` (default). Output: `dist/`.
+- After pushing, Vercel detects the commit, builds, and deploys automatically.
 
 ## Gotchas
 

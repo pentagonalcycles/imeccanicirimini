@@ -72,7 +72,7 @@ All images from the original site are preserved in `public/img/`:
 
 ## Deployment
 
-The site is configured for Vercel static deployment via `@astrojs/vercel/static`. Connect the repository to Vercel and it will auto-deploy on push.
+The site is configured for Vercel static deployment via `@astrojs/vercel/static`. The GitHub repo `pentagonalcycles/imeccanicirimini` is linked to Vercel — **every push to `main` triggers an automatic build and deploy**.
 
 ### Before going live
 
