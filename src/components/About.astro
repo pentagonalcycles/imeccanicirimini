@@ -1,0 +1,32 @@
+---
+import type { Locale } from '../lib/i18n';
+import { useTranslations } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section id="about" class="section-padding" style="background-color: var(--color-secondary);">
+  <div class="container-custom">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="mb-8">{t.about.heading}</h2>
+
+      <div class="text-base md:text-lg leading-relaxed space-y-4" set:html={t.about.text} />
+
+      <div class="mt-10">
+        <img
+          src="/img/imr/firma-gianluca.png"
+          alt={t.about.signature}
+          class="mx-auto h-20 w-auto opacity-80"
+          loading="lazy"
+          width="200"
+          height="80"
+        />
+      </div>
+    </div>
+  </div>
+</section>

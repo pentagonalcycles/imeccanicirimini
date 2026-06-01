@@ -1,0 +1,198 @@
+---
+import type { Locale } from '../lib/i18n';
+import { useTranslations, getLocalizedPath } from '../lib/i18n';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/';
+
+function navHref(sectionId: string): string {
+  if (isHomepage) {
+    return `#${sectionId}`;
+  }
+  return getLocalizedPath(`/#${sectionId}`, locale);
+}
+
+function blogHref(): string {
+  return getLocalizedPath('/blog', locale);
+}
+
+const navLinks = [
+  { label: t.nav.about, href: navHref('about') },
+  { label: t.nav.services, href: navHref('services') },
+  { label: t.nav.products, href: navHref('products') },
+  { label: t.nav.gallery, href: navHref('gallery') },
+  { label: t.nav.blog, href: blogHref() },
+  { label: t.nav.reviews, href: navHref('reviews') },
+  { label: t.nav.contact, href: navHref('contact') },
+];
+---
+
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="container-custom">
+    <nav class="flex items-center justify-between h-16">
+      <a href={getLocalizedPath('/', locale)} class="flex items-center shrink-0">
+        <img
+          src="/img/imr/imr_logo_small.png"
+          alt="I Meccanici Rimini"
+          class="h-10 w-auto transition-opacity duration-300"
+          id="logo-dark"
+          width="160"
+          height="40"
+        />
+        <img
+          src="/img/imr/imr_logo_small_w.png"
+          alt="I Meccanici Rimini"
+          class="h-10 w-auto transition-opacity duration-300 absolute"
+          id="logo-white"
+          width="160"
+          height="40"
+        />
+      </a>
+
+      <div class="hidden lg:flex items-center gap-6">
+        {navLinks.map((link) => (
+          <a href={link.href} class="nav-link" id="nav-link-dark">
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <div class="hidden lg:flex items-center gap-4">
+        <LanguageSwitcher locale={locale} currentPath={Astro.url.pathname} />
+        <a href="tel:+390541784754" class="btn-outline text-xs py-2 px-4 nav-btn-dark">
+          {t.nav.call}
+        </a>
+        <a href={navHref('contact')} class="btn-primary text-xs py-2 px-4">
+          {t.nav.getInTouch}
+        </a>
+      </div>
+
+      <button
+        id="hamburger"
+        class="lg:hidden flex flex-col gap-1.5 p-2"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <span class="block w-6 h-0.5 hamburger-line transition-colors duration-300"></span>
+        <span class="block w-6 h-0.5 hamburger-line transition-colors duration-300"></span>
+        <span class="block w-6 h-0.5 hamburger-line transition-colors duration-300"></span>
+      </button>
+    </nav>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="fixed inset-y-0 right-0 w-72 bg-white shadow-xl transform translate-x-full transition-transform duration-300 lg:hidden z-50"
+  >
+    <div class="flex flex-col h-full p-6">
+      <div class="flex justify-end mb-8">
+        <button id="close-menu" class="p-2" aria-label="Close menu">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        {navLinks.map((link) => (
+          <a href={link.href} class="nav-link text-base mobile-nav-link">
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-auto flex flex-col gap-3">
+        <LanguageSwitcher locale={locale} currentPath={Astro.url.pathname} />
+        <a href="tel:+390541784754" class="btn-outline text-sm text-center justify-center">
+          {t.nav.call}
+        </a>
+        <a href={navHref('contact')} class="btn-primary text-sm text-center justify-center">
+          {t.nav.getInTouch}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+<script>
+  function initNavbar() {
+    const navbar = document.getElementById('navbar');
+    const logoDark = document.getElementById('logo-dark');
+    const logoWhite = document.getElementById('logo-white');
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const overlay = document.getElementById('mobile-overlay');
+    const navLinks = document.querySelectorAll<HTMLElement>('#navbar .nav-link, #navbar .nav-btn-dark');
+    const hamburgerLines = document.querySelectorAll<HTMLElement>('.hamburger-line');
+
+    function updateScrollState() {
+      if (!navbar || !logoDark || !logoWhite) return;
+      const scrolled = window.scrollY > 50;
+      if (scrolled) {
+        navbar.classList.add('bg-white', 'shadow-md');
+        navbar.classList.remove('bg-transparent');
+        logoDark.style.opacity = '1';
+        logoWhite.style.opacity = '0';
+        logoWhite.style.position = 'absolute';
+        navLinks.forEach((el) => {
+          el.style.color = '';
+        });
+        hamburgerLines.forEach((el) => {
+          el.style.backgroundColor = '';
+        });
+      } else {
+        navbar.classList.remove('bg-white', 'shadow-md');
+        navbar.classList.add('bg-transparent');
+        logoDark.style.opacity = '0';
+        logoWhite.style.opacity = '1';
+        logoWhite.style.position = 'absolute';
+        navLinks.forEach((el) => {
+          el.style.color = 'white';
+        });
+        hamburgerLines.forEach((el) => {
+          el.style.backgroundColor = 'white';
+        });
+      }
+    }
+
+    function openMenu() {
+      if (!mobileMenu || !overlay || !hamburger) return;
+      mobileMenu.classList.remove('translate-x-full');
+      overlay.classList.remove('hidden');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      if (!mobileMenu || !overlay || !hamburger) return;
+      mobileMenu.classList.add('translate-x-full');
+      overlay.classList.add('hidden');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    updateScrollState();
+    window.addEventListener('scroll', updateScrollState, { passive: true });
+
+    hamburger?.addEventListener('click', openMenu);
+    closeMenu?.addEventListener('click', closeMobileMenu);
+    overlay?.addEventListener('click', closeMobileMenu);
+
+    document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  }
+
+  initNavbar();
+  document.addEventListener('astro:after-swap', initNavbar);
+</script>

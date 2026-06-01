@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations, getLocalizedPath } from '../../lib/i18n';
+
+const locale = 'en';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title={`Accessibility | I Meccanici Rimini`} description="Accessibility statement for the I Meccanici Rimini SNC website." locale={locale}>
+  <section class="pt-24 pb-16">
+    <div class="container-custom max-w-3xl">
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <a href={getLocalizedPath('/', locale)} class="text-sm text-[--color-accent] hover:underline">
+          &larr; Back to homepage
+        </a>
+      </nav>
+
+      <h1 class="text-3xl font-bold mb-8 text-[--color-primary]">Accessibility Statement</h1>
+
+      <article class="prose prose-gray max-w-none space-y-8 text-[--color-text-light] leading-relaxed">
+        <section>
+          <p>
+            <strong>I MECCANICI RIMINI SNC di Mazzocchi Gianluca e Vicinanza Verter</strong> is committed to making its website
+            accessible to all users, in accordance with the Web Content Accessibility Guidelines (WCAG) 2.1,
+            Level AA, published by the W3C.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Conformance Status</h2>
+          <p>
+            This website is partially conformant with WCAG 2.1 Level AA. We continuously work to improve
+            accessibility and ensure an inclusive user experience.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Accessibility Commitment</h2>
+          <p>We are committed to:</p>
+          <ul class="list-disc pl-6 mt-2 space-y-2">
+            <li>Providing alternative text for all meaningful images.</li>
+            <li>Ensuring adequate colour contrast between text and background.</li>
+            <li>Ensuring keyboard navigability throughout the website.</li>
+            <li>Using correct semantic HTML structure.</li>
+            <li>Making content understandable and usable by assistive technologies.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Non-Accessible Content</h2>
+          <p>
+            Some third-party content (such as social media plugins and embedded videos) may not be fully
+            conformant with accessibility standards. We are working to improve these aspects as well.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Feedback & Contact</h2>
+          <p>
+            If you encounter any accessibility issues on our website, please contact us. Your feedback is
+            important to help us improve.
+          </p>
+          <p class="mt-2">
+            <strong>I MECCANICI RIMINI SNC</strong><br />
+            Via Bufalini 18/A, 47921 Rimini<br />
+            Email: <a href="mailto:info@imeccanicirimini.it" class="text-[--color-accent] hover:underline">info@imeccanicirimini.it</a><br />
+            Phone: 0541 784754
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Complaint Procedure</h2>
+          <p>
+            If the response is not satisfactory, a complaint may be filed with Agid
+            (Agenzia per l'Italia Digitale) through the portal
+            <a href="https://form.agid.gov.it" class="text-[--color-accent] hover:underline" rel="noopener noreferrer" target="_blank">form.agid.gov.it</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Last Updated</h2>
+          <p>
+            This accessibility statement was last updated on 1 June 2026.
+          </p>
+        </section>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

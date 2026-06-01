@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Services from '../components/Services.astro';
+import Products from '../components/Products.astro';
+import Gallery from '../components/Gallery.astro';
+import Videos from '../components/Videos.astro';
+import Contact from '../components/Contact.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Brands from '../components/Brands.astro';
+import Reviews from '../components/Reviews.astro';
+import { useTranslations } from '../lib/i18n';
+
+const locale = 'it';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title={t.site.title} description={t.site.description} locale={locale}>
+  <Hero locale={locale} />
+  <About locale={locale} />
+  <Services locale={locale} />
+  <Products locale={locale} />
+  <Gallery locale={locale} />
+  <Videos locale={locale} />
+  <Reviews locale={locale} />
+  <Contact locale={locale} />
+  <ContactForm locale={locale} />
+  <Brands locale={locale} />
+</BaseLayout>

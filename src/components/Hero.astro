@@ -1,0 +1,53 @@
+---
+import type { Locale } from '../lib/i18n';
+import { useTranslations } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section id="hero" class="hero-section">
+  <div
+    class="hero-bg"
+    style="background-image: url('/img/welcome/imeccanici_res.jpg');"
+  ></div>
+
+  <div class="hero-content flex flex-col items-center gap-8">
+    <img
+      src="/img/imr/imr_logo_w.png"
+      alt="I Meccanici Rimini"
+      class="w-full max-w-xs md:max-w-sm h-auto"
+      width="400"
+      height="200"
+    />
+
+    <blockquote class="text-lg md:text-xl leading-relaxed font-light italic">
+      <p set:html={t.hero.quote} />
+      <footer class="mt-4 text-sm not-italic opacity-80">
+        — {t.hero.cite}
+      </footer>
+    </blockquote>
+
+    <a
+      href="#about"
+      class="mt-8 animate-bounce"
+      aria-label={t.hero.scrollDown}
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </a>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 767px) {
+    .hero-bg {
+      background-image: url('/img/welcome/imeccanici_mobi_res.jpg') !important;
+    }
+  }
+</style>

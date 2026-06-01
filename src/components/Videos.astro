@@ -1,0 +1,78 @@
+---
+import type { Locale } from '../lib/i18n';
+import { useTranslations } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const video1 = t.videos.video1;
+const video2 = t.videos.video2;
+---
+
+<section class="section-padding" style="background-color: var(--color-secondary);">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="flex flex-col gap-4">
+        <div class="video-container relative aspect-video rounded-lg overflow-hidden cursor-pointer group" data-video-id="7u8G180TM80">
+          <img
+            src="https://img.youtube.com/vi/7u8G180TM80/maxresdefault.jpg"
+            alt={video1.title}
+            loading="lazy"
+            class="w-full h-full object-cover"
+            width="640"
+            height="360"
+          />
+          <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+            <svg class="w-16 h-16 text-white opacity-90 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+        <h3>{video1.title}</h3>
+        <p class="text-text-light text-sm">{video1.text}</p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <div class="video-container relative aspect-video rounded-lg overflow-hidden cursor-pointer group" data-video-id="kmWVBmOJokY">
+          <img
+            src="https://img.youtube.com/vi/kmWVBmOJokY/maxresdefault.jpg"
+            alt={video2.title}
+            loading="lazy"
+            class="w-full h-full object-cover"
+            width="640"
+            height="360"
+          />
+          <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+            <svg class="w-16 h-16 text-white opacity-90 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+        <h3>{video2.title}</h3>
+        <p class="text-text-light text-sm">{video2.text}</p>
+        <p class="text-text-muted text-sm italic">
+          — {video2.cite}, {video2.citeRole}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initVideoPlayers() {
+    document.querySelectorAll<HTMLElement>('.video-container').forEach((container) => {
+      container.addEventListener('click', () => {
+        const videoId = container.dataset.videoId;
+        if (!videoId) return;
+        container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>`;
+      }, { once: true });
+    });
+  }
+
+  initVideoPlayers();
+  document.addEventListener('astro:after-swap', initVideoPlayers);
+</script>

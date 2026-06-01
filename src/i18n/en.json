@@ -1,0 +1,147 @@
+{
+  "site": {
+    "title": "I Meccanici Rimini | Bicycle Repair & Brompton Sales",
+    "description": "Bicycle mechanics in Rimini. Bicycle repair and accessories sales. Brompton folding bike dealer. ORTLIEB bags, Primabici children's bikes, ABUS helmets.",
+    "lang": "en"
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "products": "Products",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "call": "Call",
+    "getInTouch": "Get in touch"
+  },
+  "hero": {
+    "quote": "He who works with his hands is a worker.<br>He who works with his hands and his head is a craftsman.<br>He who works with his hands, his head and his heart is an artist.",
+    "cite": "St. Francis of Assisi",
+    "scrollDown": "Scroll down"
+  },
+  "about": {
+    "heading": "Gianluca & Verter",
+    "text": "Ever since I was a child, I played at being a Mechanic alongside my father, deliberately getting my hands dirty to imitate him. I unconsciously learned many tricks, absorbed vast experience and passion that I decided to turn into my trade in 1989.<br>In 2005, Verter (my cousin) joined me with the ambition to learn everything I had to teach, bringing great enthusiasm.<br>Over the years we have grown, improved, and specialized, selling everything we love — but above all OUR PASSION!",
+    "signature": "Gianluca"
+  },
+  "services": {
+    "heading": "Our Services",
+    "location": {
+      "title": "In Rimini's Historic Centre",
+      "text": "Our prime location allows us to offer you the best service, and the wait for your bike repair turns into a stroll along Corso D'Augusto, the Covered Market, or the shops of the old town.",
+      "link": "Where to find us"
+    },
+    "repair": {
+      "title": "Bicycle Repair",
+      "text": "We mainly handle bicycle repair and the sale of related accessories.<br>If you need transportation while waiting for your repair, we'll provide you with a courtesy bike!",
+      "link": "Follow us"
+    },
+    "products": {
+      "title": "What We Offer",
+      "text": "We are the local dealer for Brompton folding bikes, the renowned London brand. Brompton is a foldable, portable city bike, perfect for urban transport and commuting. We sell bicycle accessories such as Ortlieb bags, Primabici and much more...",
+      "link": "Our products"
+    }
+  },
+  "products": {
+    "heading": "Our Products",
+    "brompton": {
+      "title": "Brompton",
+      "text": "The renowned London brand has distinguished itself by creating the best folding bicycle in the world. Designed for intermodal transport, it meets the expectations of the most demanding cyclists with exhilarating performance. Always evolving, it's practical and quick both to fold and carry, and to ride.",
+      "customizable": "You can make it unique with countless combinations.",
+      "builder": "Bike-Builder"
+    },
+    "primabici": {
+      "title": "Primabici Garelli",
+      "text": "Primabici Garelli was born from the collaboration between Dolomeet and Garelli, aiming to develop balance, coordination, and confidence in children through their first steps in the cycling world through play. They are the ideal choice for children aged 18 months to 5 years. Lightweight and practical with an attractive design, available in various colours."
+    },
+    "bicicapace": {
+      "title": "Bicicapace",
+      "text": "Bicicapace is an Italian brand that designs and manufactures cargo bikes with practical and functional design. You can carry everything you need with various solutions.",
+      "moreInfo": "more info",
+      "tagline": "A special bike for exceptional transport."
+    },
+    "ortlieb": {
+      "title": "Ortlieb",
+      "text": "ORTLIEB products are renowned for being waterproof, indestructible and incredibly durable.",
+      "text2": "<em>Made in Germany</em> bags — waterproof and spacious, perfect for bike touring or long cycling trips with heavy luggage.",
+      "text3": "Come visit us to see and touch the most performant bike bags ever made."
+    },
+    "abus": {
+      "title": "Abus",
+      "text": "For cycling safety, we chose ABUS as our partner. World leader in helmets and locks for everyday protection."
+    }
+  },
+  "gallery": {
+    "heading": "Follow us on Instagram",
+    "handle": "@imeccanicirimini",
+    "hashtag": "Share your photos on Instagram with the hashtag <a href='https://www.instagram.com/explore/tags/imeccanicirimini/'>#imeccanicirimini</a> and you'll appear in this gallery!"
+  },
+  "videos": {
+    "video1": {
+      "title": "Who we are",
+      "text": "A short video introducing us and our services. We're near the Arco d'Augusto, offering plenty of warmth and... bicycle repairs, Brompton sales and service, bicycle accessories, Ortlieb bags, Primabici children's bikes, and a cycling book library."
+    },
+    "video2": {
+      "title": "\"We want to change cities.\"",
+      "text": "Today cities are congested, polluted, and inhabited by people who don't move enough. The bicycle isn't the only alternative, but it's certainly an excellent solution. Even better: a bike you can take with you anywhere! When you step out of the metro or your car, start enjoying your city's streets by bike. Let's improve our cities.",
+      "cite": "Will Butler-Adams",
+      "citeRole": "CEO of Brompton Bicycle"
+    }
+  },
+  "contact": {
+    "heading": "I MECCANICI RIMINI SNC",
+    "address": "Via Bufalini, 18/A",
+    "city": "47921, Rimini",
+    "email": "info@imeccanicirimini.it",
+    "phone": "0541 784754",
+    "hoursTitle": "Opening hours:",
+    "hours": {
+      "monday": "8:30 - 12:30 / 15:30 - 19:00",
+      "tuesday": "8:30 - 12:30 / closed in the afternoon",
+      "wednesday": "8:30 - 12:30 / 15:30 - 19:00",
+      "thursday": "8:30 - 12:30 / 15:30 - 19:00",
+      "friday": "8:30 - 12:30 / 15:30 - 19:00",
+      "saturday": "8:30 - 12:30 / closed in the afternoon"
+    }
+  },
+  "form": {
+    "heading": "Request a Quote",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "service": "Service",
+    "serviceOptions": {
+      "repair": "Repair",
+      "quote": "Quote",
+      "info": "Information",
+      "other": "Other"
+    },
+    "message": "Message",
+    "submit": "Send Request",
+    "success": "Message sent successfully! We'll get back to you soon.",
+    "error": "An error occurred. Please try again or contact us directly.",
+    "honeypot": "Leave this field empty"
+  },
+  "reviews": {
+    "heading": "What Our Customers Say",
+    "subtitle": "Customer satisfaction is our best advertisement."
+  },
+  "blog": {
+    "heading": "Blog",
+    "subtitle": "Tips, news and stories from the world of cycling.",
+    "readMore": "Read more",
+    "backToList": "Back to blog"
+  },
+  "footer": {
+    "company": "I MECCANICI RIMINI SNC di Mazzocchi Gianluca e Vicinanza Verter",
+    "address": "Via Bufalini, 18A - 47921 Rimini",
+    "vat": "VAT 04 309 360 404",
+    "privacy": "Privacy & Cookies",
+    "accessibility": "Accessibility",
+    "copyright": "© {year} I Meccanici Rimini SNC. All rights reserved."
+  },
+  "brands": {
+    "heading": "Our Brands"
+  }
+}

@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../lib/i18n';
+
+const locale = 'it';
+const t = useTranslations(locale);
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'scegliere-brompton-guida' },
+      props: {
+        title: 'Come scegliere la tua prima Brompton',
+        date: '2025-03-15',
+        image: '/img/products/brompton_04.jpg',
+      },
+    },
+    {
+      params: { slug: 'manutenzione-bici-estate' },
+      props: {
+        title: '5 consigli per preparare la bici all\'estate',
+        date: '2025-05-01',
+        image: '/img/products/ortlieb_01.jpg',
+      },
+    },
+    {
+      params: { slug: 'cargo-bike-bicicapace' },
+      props: {
+        title: 'Bicicapace: la cargo bike italiana che conquista le città',
+        date: '2025-04-10',
+        image: '/img/products/Bicicapace.jpeg',
+      },
+    },
+  ];
+}
+
+const { slug } = Astro.params;
+const { title, date, image } = Astro.props;
+---
+
+<BaseLayout title={`${title} | I Meccanici Rimini`} description={title} locale={locale}>
+  <main class="pt-24 pb-16">
+    <article class="container-custom max-w-3xl mx-auto">
+      <div class="mb-8">
+        <a href="/blog" class="text-sm text-[--color-accent] font-semibold uppercase tracking-wide hover:underline">
+          ← {t.blog.backToList}
+        </a>
+      </div>
+      <div class="aspect-video rounded-lg overflow-hidden mb-8">
+        <img src={image} alt={title} class="w-full h-full object-cover" />
+      </div>
+      <time class="text-sm text-[--color-text-muted]" datetime={date}>
+        {new Date(date).toLocaleDateString('it-TO', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+      <h1 class="mt-2 mb-6">{title}</h1>
+      <div class="prose prose-lg max-w-none">
+        {slug === 'scegliere-brompton-guida' && (
+          <>
+            <p>La Brompton è molto più di una semplice bicicletta pieghevole: è un'icona del design britannico, nata nelle officine di Londra nel 1975 e oggi amata da ciclisti di tutto il mondo.</p>
+            <h2>Quale modello scegliere?</h2>
+            <p>La gamma Brompton offre diverse configurazioni. Il modello più popolare è la <strong>Brompton C Line</strong>, versatile e adatta a tutti gli usi cittadini. Per chi cerca il massimo della leggerezza, la <strong>T Line</strong> in fibra di carbonio è imbattibile.</p>
+            <h2>Gli accessori essenziali</h2>
+            <p>Non dimenticare il portapacchi anteriore, perfetto per le borse Brompton, e un buon lucchetto. Da noi in negozio puoi provare tutte le configurazioni e trovare quella perfetta per te.</p>
+            <h2>Vieni a provarla</h2>
+            <p>Il modo migliore per scegliere la tua Brompton è provarla. Vieni a trovarci presso il nostro negozio nel centro storico di Rimini, Via Bufalini 18/A. Saremo felici di guidarti nella scelta!</p>
+          </>
+        )}
+        {slug === 'manutenzione-bici-estate' && (
+          <>
+            <p>Con l'arrivo dell'estate e le giornate più lunghe, è il momento perfetto per rimettere in forma la tua bicicletta. Ecco 5 consigli essenziali dei nostri meccanici.</p>
+            <h2>1. Controlla la pressione delle gomme</h2>
+            <p>Le gomme perdono naturalmente pressione nel tempo. Controlla il valore consigliato sul fianco dello pneumatico e gonfia di conseguenza. Una corretta pressione migliora comfort e rendimento.</p>
+            <h2>2. Lubrifica la catena</h2>
+            <p>Una catena ben lubrificata dura di più e rende il cambio più fluido. Usa un lubrificante specifico per bici e rimuovi l'eccesso con un panno.</p>
+            <h2>3. Controlla i freni</h2>
+            <p>Verifica che i pattini non siano consumati e che la frenata sia uniforme. Se senti strane vibrazioni o il freno non frena come prima, porta la bici da noi per un controllo.</p>
+            <h2>4. Aggiusta la sella e il manubrio</h2>
+            <p>Un'ergonomia corretta previene dolori. Assicurati che la sella sia alla giusta altezza e che il manubrio sia comodo.</p>
+            <h2>5. Una revisione completa</h2>
+            <p>Per la massima tranquillità, portateci la vostra bici per una revisione completa. Controlliamo ogni dettaglio per farvi pedalare in sicurezza tutta l'estate!</p>
+          </>
+        )}
+        {slug === 'cargo-bike-bicicapace' && (
+          <>
+            <p>Le cargo bike non sono più solo per i corrieri: sono la risposta intelligente alla mobilità urbana moderna. E <strong>Bicicapace</strong>, marchio 100% italiano, è in prima linea.</p>
+            <h2>Design italiano, funzionalità totale</h2>
+            <p>Bicicapace progetta e produce cargo bike a Rimini, con un design che unisce estetica e praticità. Puoi trasportare tutto: dalla spesa ai bambini, dagli attrezzi ai pacchi.</p>
+            <h2>Perché scegliere una cargo bike?</h2>
+            <p>Niente più traffico, niente più parcheggio. Con una cargo bike puoi muoverti liberamente in città, risparmiare sui carburanti e contribuire a un ambiente più pulito.</p>
+            <h2>Provala da noi</h2>
+            <p>Siamo rivenditori Bicicapace a Rimini. Vieni a provarla e scopri quanto può essere comoda e divertente la mobilità su due ruote con carico!</p>
+          </>
+        )}
+      </div>
+    </article>
+  </main>
+</BaseLayout>

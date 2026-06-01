@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../lib/i18n';
+
+const locale = 'en';
+const t = useTranslations(locale);
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { slug: 'choosing-your-first-brompton' },
+      props: {
+        title: 'How to Choose Your First Brompton',
+        date: '2025-03-15',
+        image: '/img/products/brompton_04.jpg',
+      },
+    },
+    {
+      params: { slug: 'summer-bike-maintenance' },
+      props: {
+        title: '5 Tips to Prepare Your Bike for Summer',
+        date: '2025-05-01',
+        image: '/img/products/ortlieb_01.jpg',
+      },
+    },
+    {
+      params: { slug: 'cargo-bike-bicicapace' },
+      props: {
+        title: 'Bicicapace: The Italian Cargo Bike Conquering Cities',
+        date: '2025-04-10',
+        image: '/img/products/Bicicapace.jpeg',
+      },
+    },
+  ];
+}
+
+const { slug } = Astro.params;
+const { title, date, image } = Astro.props;
+---
+
+<BaseLayout title={`${title} | I Meccanici Rimini`} description={title} locale={locale}>
+  <main class="pt-24 pb-16">
+    <article class="container-custom max-w-3xl mx-auto">
+      <div class="mb-8">
+        <a href="/en/blog" class="text-sm text-[--color-accent] font-semibold uppercase tracking-wide hover:underline">
+          ← {t.blog.backToList}
+        </a>
+      </div>
+      <div class="aspect-video rounded-lg overflow-hidden mb-8">
+        <img src={image} alt={title} class="w-full h-full object-cover" />
+      </div>
+      <time class="text-sm text-[--color-text-muted]" datetime={date}>
+        {new Date(date).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+      <h1 class="mt-2 mb-6">{title}</h1>
+      <div class="prose prose-lg max-w-none">
+        {slug === 'choosing-your-first-brompton' && (
+          <>
+            <p>The Brompton is much more than a simple folding bike: it's an icon of British design, born in London workshops in 1975 and now loved by cyclists worldwide.</p>
+            <h2>Which model to choose?</h2>
+            <p>The Brompton range offers various configurations. The most popular model is the <strong>Brompton C Line</strong>, versatile and suitable for all urban uses. For those seeking the ultimate in lightness, the carbon fibre <strong>T Line</strong> is unbeatable.</p>
+            <h2>Essential accessories</h2>
+            <p>Don't forget the front carrier block, perfect for Brompton bags, and a good lock. At our shop you can try all configurations and find the perfect one for you.</p>
+            <h2>Come try it</h2>
+            <p>The best way to choose your Brompton is to try it. Visit us at our shop in Rimini's historic centre, Via Bufalini 18/A. We'll be happy to guide you through the selection!</p>
+          </>
+        )}
+        {slug === 'summer-bike-maintenance' && (
+          <>
+            <p>With summer arriving and longer days, it's the perfect time to get your bicycle back in shape. Here are 5 essential tips from our mechanics.</p>
+            <h2>1. Check tyre pressure</h2>
+            <p>Tyres naturally lose pressure over time. Check the recommended value on the sidewall and inflate accordingly. Correct pressure improves comfort and efficiency.</p>
+            <h2>2. Lubricate the chain</h2>
+            <p>A well-lubricated chain lasts longer and makes shifting smoother. Use a bike-specific lubricant and wipe off excess with a cloth.</p>
+            <h2>3. Check the brakes</h2>
+            <p>Verify that brake pads aren't worn and that braking is even. If you feel unusual vibrations or the brakes aren't performing as they should, bring your bike to us for a check.</p>
+            <h2>4. Adjust saddle and handlebars</h2>
+            <p>Correct ergonomics prevents pain. Make sure your saddle is at the right height and your handlebars are comfortable.</p>
+            <h2>5. A complete service</h2>
+            <p>For total peace of mind, bring us your bike for a full service. We check every detail to let you ride safely all summer!</p>
+          </>
+        )}
+        {slug === 'cargo-bike-bicicapace' && (
+          <>
+            <p>Cargo bikes aren't just for couriers anymore: they're the smart answer to modern urban mobility. And <strong>Bicicapace</strong>, a 100% Italian brand, is leading the way.</p>
+            <h2>Italian design, total functionality</h2>
+            <p>Bicicapace designs and manufactures cargo bikes in Rimini, combining aesthetics and practicality. You can transport everything: from groceries to children, from tools to parcels.</p>
+            <h2>Why choose a cargo bike?</h2>
+            <p>No more traffic, no more parking. With a cargo bike you can move freely around the city, save on fuel, and contribute to a cleaner environment.</p>
+            <h2>Try it at our shop</h2>
+            <p>We are Bicicapace dealers in Rimini. Come and try one and discover how convenient and fun two-wheeled mobility with a load can be!</p>
+          </>
+        )}
+      </div>
+    </article>
+  </main>
+</BaseLayout>

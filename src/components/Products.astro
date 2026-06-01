@@ -1,0 +1,120 @@
+---
+import type { Locale } from '../lib/i18n';
+import { useTranslations } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const productSections = [
+  {
+    id: 'brompton',
+    image: '/img/products/brompton_04.jpg',
+    brandLogo: '/img/brands/brompton_logo.png',
+    altLogo: '/img/brands/brompton_logo2.png',
+    reverse: false,
+    hasLink: true,
+    linkHref: 'https://www.brompton.com/Build-your-Brompton',
+    linkText: t.products.brompton.builder,
+  },
+  {
+    id: 'primabici',
+    image: '/img/products/PrimaBiciBambino.jpeg',
+    brandLogo: '/img/brands/PrimaBiciGarelli300px.jpg',
+    reverse: true,
+    hasLink: false,
+  },
+  {
+    id: 'bicicapace',
+    image: '/img/products/Bicicapace.jpeg',
+    brandLogo: '/img/brands/logo_Bicicapace.jpg',
+    reverse: false,
+    hasLink: true,
+    linkHref: 'https://www.bicicapace.com/',
+    linkText: t.products.bicicapace.moreInfo,
+  },
+  {
+    id: 'ortlieb',
+    image: '/img/products/ortlieb_01.jpg',
+    brandLogo: '/img/brands/ortlieb_logo.png',
+    altLogo: '/img/brands/ortlieb_logo2.png',
+    reverse: true,
+    hasLink: false,
+  },
+  {
+    id: 'abus',
+    image: '/img/products/abus_01.jpg',
+    brandLogo: '/img/brands/abus_logo.png',
+    altLogo: '/img/brands/abus_logo2.png',
+    reverse: false,
+    hasLink: false,
+  },
+];
+
+type ProductKey = 'brompton' | 'primabici' | 'bicicapace' | 'ortlieb' | 'abus';
+---
+
+<section id="products" class="section-padding" style="background-color: var(--color-secondary);">
+  <div class="container-custom">
+    <h2 class="text-center mb-16">{t.products.heading}</h2>
+
+    <div class="space-y-0">
+      {productSections.map((product) => {
+        const data = t.products[product.id as ProductKey];
+        return (
+          <div class={`product-section ${product.reverse ? 'reverse' : ''}`}>
+            <div class="product-image">
+              <img
+                src={product.image}
+                alt={data.title}
+                loading="lazy"
+                width="800"
+                height="600"
+              />
+            </div>
+            <div class="product-content">
+              <img
+                src={product.brandLogo}
+                alt={data.title}
+                class="h-12 w-auto mb-6 object-contain"
+                loading="lazy"
+                width="150"
+                height="48"
+              />
+              <h3 class="mb-4">{data.title}</h3>
+              <p class="text-text-light mb-2" set:html={data.text} />
+              {product.id === 'brompton' && (
+                <p class="text-text-light mb-4">{t.products.brompton.customizable}</p>
+              )}
+              {product.id === 'bicicapace' && (
+                <p class="text-accent italic mb-4">{t.products.bicicapace.tagline}</p>
+              )}
+              {product.id === 'ortlieb' && (
+                <>
+                  <p class="text-text-light mb-2" set:html={t.products.ortlieb.text2} />
+                  <p class="text-text-light mb-4">{t.products.ortlieb.text3}</p>
+                </>
+              )}
+              {product.hasLink && (
+                <a
+                  href={product.linkHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-outline text-xs mt-2"
+                >
+                  {product.linkText}
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

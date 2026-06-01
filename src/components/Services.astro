@@ -1,0 +1,61 @@
+---
+import type { Locale } from '../lib/i18n';
+import { useTranslations, getLocalizedPath } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/';
+
+function sectionHref(id: string): string {
+  if (isHomepage) return `#${id}`;
+  return getLocalizedPath(`/#${id}`, locale);
+}
+
+const cards = [
+  {
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+    title: t.services.location.title,
+    text: t.services.location.text,
+    linkText: t.services.location.link,
+    href: sectionHref('contact'),
+  },
+  {
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+    title: t.services.repair.title,
+    text: t.services.repair.text,
+    linkText: t.services.repair.link,
+    href: sectionHref('gallery'),
+  },
+  {
+    icon: `<svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>`,
+    title: t.services.products.title,
+    text: t.services.products.text,
+    linkText: t.services.products.link,
+    href: sectionHref('products'),
+  },
+];
+---
+
+<section id="services" class="section-padding">
+  <div class="container-custom">
+    <h2 class="text-center mb-12">{t.services.heading}</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {cards.map((card) => (
+        <div class="feature-card text-center">
+          <div class="text-accent mb-4 flex justify-center" set:html={card.icon} />
+          <h3 class="text-xl mb-4">{card.title}</h3>
+          <p class="text-text-light mb-6" set:html={card.text} />
+          <a href={card.href} class="btn-outline text-xs">
+            {card.linkText}
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

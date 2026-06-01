@@ -1,0 +1,59 @@
+---
+import type { Locale } from '../lib/i18n';
+import { useTranslations } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const galleryImages = [
+  { src: '/img/products/brompton_04.jpg', alt: 'Brompton bicycle' },
+  { src: '/img/products/ortlieb_01.jpg', alt: 'Ortlieb bags' },
+  { src: '/img/products/PrimaBiciBambino.jpeg', alt: 'Primabici children bike' },
+  { src: '/img/products/Bicicapace.jpeg', alt: 'Bicicapace cargo bike' },
+  { src: '/img/products/abus_01.jpg', alt: 'Abus helmets' },
+  { src: '/img/welcome/imeccanici_res.jpg', alt: 'I Meccanici Rimini shop' },
+];
+---
+
+<section id="gallery" class="section-padding">
+  <div class="container-custom">
+    <h2 class="text-center mb-4">{t.gallery.heading}</h2>
+
+    <div class="text-center mb-10">
+      <a
+        href="https://www.instagram.com/imeccanicirimini/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent font-semibold text-lg hover:underline"
+      >
+        {t.gallery.handle}
+      </a>
+      <p class="mt-4 text-text-light max-w-xl mx-auto" set:html={t.gallery.hashtag} />
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      {galleryImages.map((img) => (
+        <div class="aspect-square overflow-hidden rounded-md">
+          <a
+            href="https://www.instagram.com/imeccanicirimini/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              loading="lazy"
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              width="400"
+              height="400"
+            />
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

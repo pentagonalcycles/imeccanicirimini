@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations, getLocalizedPath } from '../../lib/i18n';
+
+const locale = 'en';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title={`Privacy & Cookies | I Meccanici Rimini`} description="Privacy and cookie policy for I Meccanici Rimini SNC." locale={locale}>
+  <section class="pt-24 pb-16">
+    <div class="container-custom max-w-3xl">
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <a href={getLocalizedPath('/', locale)} class="text-sm text-[--color-accent] hover:underline">
+          &larr; Back to homepage
+        </a>
+      </nav>
+
+      <h1 class="text-3xl font-bold mb-8 text-[--color-primary]">Privacy & Cookie Policy</h1>
+
+      <article class="prose prose-gray max-w-none space-y-8 text-[--color-text-light] leading-relaxed">
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">1. Data Controller</h2>
+          <p>
+            The Data Controller is <strong>I MECCANICI RIMINI SNC di Mazzocchi Gianluca e Vicinanza Verter</strong>,
+            headquartered at Via Bufalini 18/A, 47921 Rimini, VAT 04 309 360 404.
+          </p>
+          <p>
+            For any requests regarding personal data processing, you may contact the Data Controller
+            at <a href="mailto:info@imeccanicirimini.it" class="text-[--color-accent] hover:underline">info@imeccanicirimini.it</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">2. Purpose of Data Processing</h2>
+          <p>Personal data collected is processed for the following purposes:</p>
+          <ul class="list-disc pl-6 mt-2 space-y-2">
+            <li>
+              <strong>Responding to contact requests:</strong> data provided through the contact form (name, email, phone, message)
+              will be used solely to respond to the requests received.
+            </li>
+            <li>
+              <strong>Newsletter:</strong> if the user subscribes to the newsletter, their email address will be used
+              to send commercial communications related to products and services offered.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">3. Legal Basis for Processing</h2>
+          <p>
+            Data processing is based on the data subject's consent (Art. 6(1)(a) of the GDPR) and,
+            for contact requests, on the performance of pre-contractual measures taken at the data subject's request
+            (Art. 6(1)(b) of the GDPR).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">4. Cookie Policy</h2>
+          <p>
+            This website uses various types of cookies. A detailed description follows.
+          </p>
+
+          <h3 class="text-lg font-medium text-[--color-primary] mt-6 mb-2">Technical Cookies</h3>
+          <p>
+            Technical cookies are necessary for the proper functioning of the website. They do not require user consent
+            as they are strictly necessary to provide the requested service.
+          </p>
+
+          <h3 class="text-lg font-medium text-[--color-primary] mt-6 mb-2">Third-Party Cookies – Google Analytics</h3>
+          <p>
+            This website uses Google Analytics, a web analytics service provided by Google Inc. ("Google").
+            Google Analytics uses cookies to help the website analyse how users use the site. The information generated
+            by the cookie about website usage (including anonymised IP address) will be transmitted to and stored
+            on Google's servers in the United States.
+          </p>
+          <p class="mt-2">
+            Google will use this information to track and examine website usage, compile reports on website activity
+            for website operators, and provide other services related to website activity and Internet usage.
+          </p>
+          <p class="mt-2">
+            Users can choose to disable Google Analytics by installing the
+            <a href="https://tools.google.com/dlpage/gaoptout" class="text-[--color-accent] hover:underline" rel="noopener noreferrer" target="_blank">Google Analytics opt-out browser add-on</a>.
+          </p>
+
+          <h3 class="text-lg font-medium text-[--color-primary] mt-6 mb-2">Third-Party Cookies – Social Media</h3>
+          <p>
+            Website pages may contain social network plugins (Facebook, Instagram). These plugins may collect
+            user browsing data even if the user does not interact with them directly. We recommend consulting
+            the privacy policies of the respective social networks:
+          </p>
+          <ul class="list-disc pl-6 mt-2 space-y-1">
+            <li>
+              <a href="https://www.facebook.com/privacy/explanation" class="text-[--color-accent] hover:underline" rel="noopener noreferrer" target="_blank">Facebook – Privacy Policy</a>
+            </li>
+            <li>
+              <a href="https://help.instagram.com/519522125107875" class="text-[--color-accent] hover:underline" rel="noopener noreferrer" target="_blank">Instagram – Privacy Policy</a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">5. Data Subject Rights</h2>
+          <p>
+            In accordance with EU Regulation 2016/679 (GDPR), the data subject has the right to:
+          </p>
+          <ul class="list-disc pl-6 mt-2 space-y-2">
+            <li><strong>Access</strong> (Art. 15): obtain confirmation as to whether personal data is being processed.</li>
+            <li><strong>Rectification</strong> (Art. 16): obtain the correction of inaccurate personal data.</li>
+            <li><strong>Erasure</strong> (Art. 17): obtain the deletion of personal data ("right to be forgotten").</li>
+            <li><strong>Portability</strong> (Art. 20): receive personal data in a structured, commonly used, machine-readable format.</li>
+            <li><strong>Objection</strong> (Art. 21): object to the processing of personal data.</li>
+            <li><strong>Withdraw consent</strong>: withdraw consent at any time without affecting the lawfulness of processing based on consent before its withdrawal.</li>
+          </ul>
+          <p class="mt-4">
+            To exercise their rights, the data subject may contact the Data Controller at
+            <a href="mailto:info@imeccanicirimini.it" class="text-[--color-accent] hover:underline">info@imeccanicirimini.it</a>.
+          </p>
+          <p class="mt-2">
+            The data subject also has the right to lodge a complaint with the Italian Data Protection Authority
+            (<a href="https://www.garanteprivacy.it" class="text-[--color-accent] hover:underline" rel="noopener noreferrer" target="_blank">www.garanteprivacy.it</a>).
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">6. Data Retention</h2>
+          <p>
+            Personal data will be retained for the period strictly necessary to fulfil the purposes
+            for which it was collected, and in any case in compliance with legal requirements.
+          </p>
+        </section>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

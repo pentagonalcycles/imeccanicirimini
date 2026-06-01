@@ -1,0 +1,60 @@
+---
+import type { Locale } from '../lib/i18n';
+import { useTranslations } from '../lib/i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const brands = [
+  { name: 'Brompton', logo: '/img/brands/brompton_logo2.png', url: 'https://www.brompton.com' },
+  { name: 'Ortlieb', logo: '/img/brands/ortlieb_logo2.png', url: 'https://www.ortlieb.com/it/' },
+  { name: 'Tubus', logo: '/img/brands/tubus_logo.png', url: 'https://www.tubus.com' },
+  { name: 'Primabici', logo: '/img/brands/PrimaBiciGarelli300px.jpg', url: 'https://www.primabici.com' },
+  { name: 'BRN', logo: '/img/brands/brn_logo.png', url: 'https://www.brn.it' },
+  { name: 'Abus', logo: '/img/brands/abus_logo2.png', url: 'https://www.abus.com/it' },
+  { name: 'Ediciclo', logo: '/img/brands/ediciclo_logo.png', url: 'https://www.ediciclo.it' },
+];
+---
+
+<section class="section-padding" style="background-color: var(--color-secondary);">
+  <div class="container-custom">
+    <h2 class="text-center mb-12">{t.brands.heading}</h2>
+
+    <div class="overflow-x-auto scrollbar-hide">
+      <div class="flex items-center gap-10 md:gap-14 px-4 pb-4" style="min-width: max-content;">
+        {brands.map((brand) => (
+          <a
+            href={brand.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="shrink-0 flex items-center justify-center h-20 px-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow grayscale hover:grayscale-0"
+            aria-label={brand.name}
+          >
+            <img
+              src={brand.logo}
+              alt={brand.name}
+              class="max-h-12 w-auto object-contain"
+              loading="lazy"
+              width="150"
+              height="48"
+            />
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>

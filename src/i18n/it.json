@@ -1,0 +1,147 @@
+{
+  "site": {
+    "title": "I Meccanici Rimini | Riparazione Biciclette e Vendita Brompton",
+    "description": "I Meccanici di Biciclette a Rimini. Riparazione biciclette e vendita accessori. Rivenditore bici pieghevole Brompton. Borse ORTLIEB, bici per bambini Primabici caschi ABUS.",
+    "lang": "it"
+  },
+  "nav": {
+    "about": "Chi siamo",
+    "services": "Servizi",
+    "products": "Prodotti",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "reviews": "Recensioni",
+    "contact": "Contatti",
+    "call": "Chiama",
+    "getInTouch": "Contattaci"
+  },
+  "hero": {
+    "quote": "Chi lavora con le sue mani è un lavoratore.<br>Chi lavora con le sue mani e la sua testa è un artigiano.<br>Chi lavora con le sue mani e la sua testa ed il suo cuore è un artista.",
+    "cite": "San Francesco D'assisi",
+    "scrollDown": "Scorri in basso"
+  },
+  "about": {
+    "heading": "Gianluca & Verter",
+    "text": "Fin da piccolo ho giocato a fare il Meccanico al fianco di mio padre, sporcandomi volutamente le mani per imitarlo ho inconsciamente imparato tanti trucchi, assimilato tanta esperienza e tanta passione che decido di trasformare, nel 1989, nel mio mestiere.<br>Nel 2005, Verter (mio cugino) mi si affianca con l'ambizione di imparare tutto quello che avevo da insegnargli, portando tanto entusiasmo.<br>Negli anni siamo cresciuti, migliorati, specializzati, vendendo tutto ciò che ci piace ma soprattutto la NOSTRA PASSIONE!",
+    "signature": "Gianluca"
+  },
+  "services": {
+    "heading": "I nostri servizi",
+    "location": {
+      "title": "In centro storico a Rimini",
+      "text": "L'ottima posizione ci avvantaggia per offrirvi il miglior servizio e l'attesa per la riparazione della vostra bici si trasforma in una passeggiata nel Corso D'Augusto o al Mercato Coperto o nei negozi del centro storico.",
+      "link": "Dove siamo"
+    },
+    "repair": {
+      "title": "Riparazione Biciclette",
+      "text": "Ci occupiamo principalmente di riparazione di biciclette e vendita dei relativi accessori.<br>Se avete necessità nell'attesa della riparazione vi forniremo di una bici di cortesia!",
+      "link": "Seguici"
+    },
+    "products": {
+      "title": "Cosa proponiamo",
+      "text": "Siamo rivenditori di zona delle biciclette pieghevoli Brompton, noto marchio londinese. La Brompton è una city bike pieghevole e trasportabile, adatta per il trasporto urbano e per l'uso cittadino. Vendiamo accessori per biciclette come le borse Ortlieb, Primabici e molto altro...",
+      "link": "I nostri prodotti"
+    }
+  },
+  "products": {
+    "heading": "I nostri prodotti",
+    "brompton": {
+      "title": "Brompton",
+      "text": "Il noto marchio londinese si è contraddistinto per aver realizzato la miglior bicicletta pieghevole al mondo. Concepita per il trasporto intermodale, soddisfa le aspettative dei ciclisti più esigenti con prestazioni esaltanti. Sempre in continua evoluzione è pratica e veloce sia nel chiuderla e trasportarla che nel pedalarla.",
+      "customizable": "Puoi renderla unica con tantissime combinazioni.",
+      "builder": "Bike-Builder"
+    },
+    "primabici": {
+      "title": "Primabici Garelli",
+      "text": "Primabici Garelli nasce dalla collaborazione tra Dolomeet e Garelli con lo scopo di sviluppare nei bambini equilibrio, coordinazione, fiducia nei loro primi passi nel mondo bici mediante il gioco. Sono la scelta ideale per bambini dai 18 mesi ai 5 anni. Leggera e pratica dalla linea accattivante, puoi scegliere tra diversi colori."
+    },
+    "bicicapace": {
+      "title": "Bicicapace",
+      "text": "Bicicapace è un marchio italiano che progetta e produce cargo bike dal design pratico e funzionale. Puoi trasportare tutto ciò di cui hai bisogno con diverse soluzioni.",
+      "moreInfo": "maggiori info",
+      "tagline": "Bici speciale per trasporti eccezionali."
+    },
+    "ortlieb": {
+      "title": "Ortlieb",
+      "text": "I prodotti ORTLIEB hanno la fama di essere impermeabili, indistruttibili e di durare tantissimo.",
+      "text2": "Borse <em>Made in Germany</em>, impermeabili e spaziose per il bike trekking o viaggi lunghi in bici con grande bagaglio.",
+      "text3": "Venite a trovarci per toccare con mano le borse per bici più performanti di sempre."
+    },
+    "abus": {
+      "title": "Abus",
+      "text": "Per la sicurezza in bicicletta abbiamo scelto ABUS come Partner. Leader mondiale di caschi e lucchetti per proteggersi tutti i giorni."
+    }
+  },
+  "gallery": {
+    "heading": "Seguici su Instagram",
+    "handle": "@imeccanicirimini",
+    "hashtag": "Condividi le tue foto su Instagram con l'hashtag <a href='https://www.instagram.com/explore/tags/imeccanicirimini/'>#imeccanicirimini</a> ed apparirai in questa galleria!"
+  },
+  "videos": {
+    "video1": {
+      "title": "Guarda chi siamo",
+      "text": "Un breve video di presentazione di noi e dei nostri servizi, siamo vicini all'Arco d'Augusto, offriamo tanta simpatia e... riparazioni biciclette, vendita ed assistenza Brompton, vendita accessori biciclette, borse Ortlieb, biciclettine Primabici, biblioteca libri per le due ruote."
+    },
+    "video2": {
+      "title": "\"Vogliamo cambiare le città.\"",
+      "text": "Oggi le città sono congestionate, inquinate e vissute da persone che non si muovono abbastanza. La bicicletta non è l'unica alternativa, ma è certamente un'ottima soluzione. Persino meglio: una bici che puoi portare con te ovunque! Quando esci dalla metro o dall'auto. Comincia a goderti le strade della tua città andando in bici. Miglioriamo le nostre città.",
+      "cite": "Will Butler-Adams",
+      "citeRole": "CEO di Brompton Bicycle"
+    }
+  },
+  "contact": {
+    "heading": "I MECCANICI RIMINI SNC",
+    "address": "Via Bufalini, 18/A",
+    "city": "47921, Rimini",
+    "email": "info@imeccanicirimini.it",
+    "phone": "0541 784754",
+    "hoursTitle": "Orari di apertura:",
+    "hours": {
+      "monday": "8:30 - 12:30 / 15:30 - 19:00",
+      "tuesday": "8:30 - 12:30 / pomeriggio chiuso",
+      "wednesday": "8:30 - 12:30 / 15:30 - 19:00",
+      "thursday": "8:30 - 12:30 / 15:30 - 19:00",
+      "friday": "8:30 - 12:30 / 15:30 - 19:00",
+      "saturday": "8:30 - 12:30 / pomeriggio chiuso"
+    }
+  },
+  "form": {
+    "heading": "Richiedi un preventivo",
+    "name": "Nome",
+    "email": "Email",
+    "phone": "Telefono",
+    "service": "Servizio",
+    "serviceOptions": {
+      "repair": "Riparazione",
+      "quote": "Preventivo",
+      "info": "Informazioni",
+      "other": "Altro"
+    },
+    "message": "Messaggio",
+    "submit": "Invia richiesta",
+    "success": "Messaggio inviato con successo! Ti risponderemo al più presto.",
+    "error": "Si è verificato un errore. Riprova o contattaci direttamente.",
+    "honeypot": "Lascia vuoto questo campo"
+  },
+  "reviews": {
+    "heading": "Cosa dicono i nostri clienti",
+    "subtitle": "La soddisfazione dei nostri clienti è la nostra migliore pubblicità."
+  },
+  "blog": {
+    "heading": "Blog",
+    "subtitle": "Consigli, novità e storie dal mondo della bicicletta.",
+    "readMore": "Leggi tutto",
+    "backToList": "Torna al blog"
+  },
+  "footer": {
+    "company": "I MECCANICI RIMINI SNC di Mazzocchi Gianluca e Vicinanza Verter",
+    "address": "Via Bufalini, 18A - 47921 Rimini",
+    "vat": "P.IVA 04 309 360 404",
+    "privacy": "Privacy e cookie",
+    "accessibility": "Accessibilità",
+    "copyright": "© {year} I Meccanici Rimini SNC. Tutti i diritti riservati."
+  },
+  "brands": {
+    "heading": "I nostri brand"
+  }
+}

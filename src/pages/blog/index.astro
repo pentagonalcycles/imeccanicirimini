@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../lib/i18n';
+
+const locale = 'it';
+const t = useTranslations(locale);
+
+const posts = [
+  {
+    slug: 'scegliere-brompton-guida',
+    title: 'Come scegliere la tua prima Brompton',
+    excerpt: 'Guida pratica per orientarsi tra i modelli, gli optional e le configurazioni della bici pieghevole più amata al mondo.',
+    date: '2025-03-15',
+    image: '/img/products/brompton_04.jpg',
+  },
+  {
+    slug: 'manutenzione-bici-estate',
+    title: '5 consigli per preparare la bici all\'estate',
+    excerpt: 'La guida essenziale per mettere a punto la tua bicicletta prima della stagione calda a Rimini.',
+    date: '2025-05-01',
+    image: '/img/products/ortlieb_01.jpg',
+  },
+  {
+    slug: 'cargo-bike-bicicapace',
+    title: 'Bicicapace: la cargo bike italiana che conquista le città',
+    excerpt: 'Scopri come le cargo bike Bicicapace stanno rivoluzionando la mobilità urbana con stile italiano.',
+    date: '2025-04-10',
+    image: '/img/products/Bicicapace.jpeg',
+  },
+];
+---
+
+<BaseLayout title={`${t.blog.heading} | I Meccanici Rimini`} description={t.blog.subtitle} locale={locale}>
+  <main class="pt-24 pb-16">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h1 class="mb-4">{t.blog.heading}</h1>
+        <p class="text-lg text-[--color-text-light]">{t.blog.subtitle}</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}`} class="group block bg-white rounded-lg overflow-hidden border border-gray-100 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div class="aspect-video overflow-hidden">
+              <img
+                src={post.image}
+                alt={post.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <div class="p-6">
+              <time class="text-sm text-[--color-text-muted]" datetime={post.date}>
+                {new Date(post.date).toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+              <h3 class="mt-2 mb-3 text-xl font-semibold text-[--color-primary]">{post.title}</h3>
+              <p class="text-[--color-text-light] text-sm leading-relaxed">{post.excerpt}</p>
+              <span class="inline-block mt-4 text-sm font-semibold text-[--color-accent] uppercase tracking-wide">
+                {t.blog.readMore} →
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

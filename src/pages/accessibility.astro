@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { useTranslations, getLocalizedPath } from '../lib/i18n';
+
+const locale = 'it';
+const t = useTranslations(locale);
+---
+
+<BaseLayout title={`Accessibilità | I Meccanici Rimini`} description="Dichiarazione di accessibilità del sito web I Meccanici Rimini SNC." locale={locale}>
+  <section class="pt-24 pb-16">
+    <div class="container-custom max-w-3xl">
+      <nav class="mb-8" aria-label="Breadcrumb">
+        <a href={getLocalizedPath('/', locale)} class="text-sm text-[--color-accent] hover:underline">
+          &larr; Torna alla homepage
+        </a>
+      </nav>
+
+      <h1 class="text-3xl font-bold mb-8 text-[--color-primary]">Dichiarazione di Accessibilità</h1>
+
+      <article class="prose prose-gray max-w-none space-y-8 text-[--color-text-light] leading-relaxed">
+        <section>
+          <p>
+            <strong>I MECCANICI RIMINI SNC di Mazzocchi Gianluca e Vicinanza Verter</strong> si impegna a rendere il proprio sito web
+            accessibile a tutti gli utenti, in conformità con le Linee guida per l'accessibilità dei contenuti web (WCAG) 2.1,
+            livello AA, pubblicate dal W3C.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Stato di conformità</h2>
+          <p>
+            Questo sito web è parzialmente conforme con il livello AA delle WCAG 2.1. Lavoriamo costantemente per migliorare
+            l'accessibilità e garantire un'esperienza utente inclusiva.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Impegno per l'accessibilità</h2>
+          <p>Ci impegniamo a:</p>
+          <ul class="list-disc pl-6 mt-2 space-y-2">
+            <li>Fornire testi alternativi per tutte le immagini significative.</li>
+            <li>Garantire un adeguato contrasto cromatico tra testo e sfondo.</li>
+            <li>Assicurare la navigabilità del sito tramite tastiera.</li>
+            <li>Utilizzare una struttura semantica HTML corretta.</li>
+            <li>Rendere i contenuti comprensibili e utilizzabili da tecnologie assistive.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Contenuti non accessibili</h2>
+          <p>
+            Alcuni contenuti di terze parti (come i plugin dei social media e i video incorporati) potrebbero non essere
+            pienamente conformi agli standard di accessibilità. Lavoriamo per migliorare anche questi aspetti.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Segnalazioni e contatti</h2>
+          <p>
+            Se riscontri problemi di accessibilità nel nostro sito web, ti preghiamo di contattarci. Il tuo feedback è
+            importante per aiutarci a migliorare.
+          </p>
+          <p class="mt-2">
+            <strong>I MECCANICI RIMINI SNC</strong><br />
+            Via Bufalini 18/A, 47921 Rimini<br />
+            Email: <a href="mailto:info@imeccanicirimini.it" class="text-[--color-accent] hover:underline">info@imeccanicirimini.it</a><br />
+            Telefono: 0541 784754
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Procedura di reclamo</h2>
+          <p>
+            Nel caso in cui la risposta non sia stata soddisfacente, è possibile presentare un reclamo all'Agid
+            (Agenzia per l'Italia Digitale) tramite il portale
+            <a href="https://form.agid.gov.it" class="text-[--color-accent] hover:underline" rel="noopener noreferrer" target="_blank">form.agid.gov.it</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-[--color-primary] mb-3">Aggiornamento</h2>
+          <p>
+            La presente dichiarazione di accessibilità è stata aggiornata il 1 giugno 2026.
+          </p>
+        </section>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
