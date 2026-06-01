@@ -132,7 +132,8 @@ const navLinks = [
     const mobileMenu = document.getElementById('mobile-menu');
     const closeMenu = document.getElementById('close-menu');
     const overlay = document.getElementById('mobile-overlay');
-    const navLinks = document.querySelectorAll<HTMLElement>('#navbar .nav-link, #navbar .nav-btn-dark');
+    const navLinks = document.querySelectorAll<HTMLElement>('#navbar .nav-link');
+    const navBtnDark = document.querySelector<HTMLElement>('#navbar .nav-btn-dark');
     const hamburgerLines = document.querySelectorAll<HTMLElement>('.hamburger-line');
 
     function updateScrollState() {
@@ -147,6 +148,10 @@ const navLinks = [
         navLinks.forEach((el) => {
           el.style.color = '';
         });
+        if (navBtnDark) {
+          navBtnDark.style.color = '';
+          navBtnDark.style.borderColor = '';
+        }
         hamburgerLines.forEach((el) => {
           el.style.backgroundColor = '';
         });
@@ -159,6 +164,10 @@ const navLinks = [
         navLinks.forEach((el) => {
           el.style.color = 'white';
         });
+        if (navBtnDark) {
+          navBtnDark.style.color = 'white';
+          navBtnDark.style.borderColor = 'white';
+        }
         hamburgerLines.forEach((el) => {
           el.style.backgroundColor = 'white';
         });
