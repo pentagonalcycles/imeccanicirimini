@@ -56,7 +56,7 @@ const navLinks = [
         />
       </a>
 
-      <div class="hidden lg:flex items-center gap-6">
+      <div class="hidden md:flex items-center gap-6">
         {navLinks.map((link) => (
           <a href={link.href} class="nav-link" id="nav-link-dark">
             {link.label}
@@ -64,7 +64,7 @@ const navLinks = [
         ))}
       </div>
 
-      <div class="hidden lg:flex items-center gap-4">
+      <div class="hidden md:flex items-center gap-4">
         <LanguageSwitcher locale={locale} currentPath={Astro.url.pathname} />
         <a href="tel:+390541784754" class="btn-outline text-xs py-2 px-4 nav-btn-dark">
           {t.nav.call}
@@ -76,7 +76,7 @@ const navLinks = [
 
       <button
         id="hamburger"
-        class="lg:hidden flex flex-col gap-1.5 p-2"
+        class="md:hidden flex flex-col gap-1.5 p-2"
         aria-label="Menu"
         aria-expanded="false"
       >
@@ -89,7 +89,7 @@ const navLinks = [
 
   <div
     id="mobile-menu"
-    class="fixed inset-y-0 right-0 w-72 bg-white shadow-xl transform translate-x-full transition-transform duration-300 lg:hidden z-50"
+    class="fixed inset-y-0 right-0 w-72 bg-white shadow-xl transform translate-x-full transition-transform duration-300 md:hidden z-50"
   >
     <div class="flex flex-col h-full p-6">
       <div class="flex justify-end mb-8">
@@ -121,7 +121,7 @@ const navLinks = [
   </div>
 </header>
 
-<div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+<div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-40 hidden md:hidden"></div>
 
 <script>
   function initNavbar() {
